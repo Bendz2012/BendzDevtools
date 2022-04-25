@@ -1,5 +1,5 @@
 import { copyToClipBoard, getUserInput, sleep } from "./utils";
-import * as NativeUi from "./NativeUi/NativeUi.js";
+import * as NativeUi from "./nativeui/NativeUi.js";
 
 export function inintCreateMarkerMenu(menuItem: NativeUi.UIMenuItem, menu: NativeUi.Menu) {
     let markerType = 0;
