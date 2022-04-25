@@ -20,7 +20,6 @@ onNet("BendzDevtools:Toggle", () => {
 
 function menuInit() {
     menu.Visible = false;
-    menu.GetTitle().DropShadow = true;
 
     let copyCoordsItem = new NativeUi.UIMenuItem("Copy Coords", "Copy Coords in different formats");
     menu.AddItem(copyCoordsItem);
