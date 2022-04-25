@@ -1,5 +1,5 @@
 import { copyToClipBoard } from "./utils";
-import * as NativeUi from "./nativeui/NativeUi.js";
+import * as NativeUi from "./nativeui/nativeui.js";
 
 export function initCopyCoordsMenu(menuItem: NativeUi.UIMenuItem, menu: NativeUi.Menu) {
     var includeHeading = false;

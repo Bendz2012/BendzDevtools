@@ -1,4 +1,4 @@
-import * as NativeUi from "./nativeui/NativeUi.js";
+import * as NativeUi from "./nativeui/nativeui.js";
 import { initCopyCoordsMenu } from "./copyCoordsMenu";
 import { inintCreateMarkerMenu } from "./createMarkerMenu";
 
