@@ -36,7 +36,8 @@ jobs:
     - run: npm run build --if-present
     - name: Bundle built files
       run: |
-        mkdir -p ./temp/BendzDevtools/resources
+        mkdir -p ./temp/BendzDevtools
+        cp ./{fxmanifest.lua} ./temp/BendzDevtools/
         cp -r ./dist ./temp/BendzDevtools
         cd ./temp && zip -r ../BendzDevtools.zip ./BendzDevtools
     - name: Create Release
