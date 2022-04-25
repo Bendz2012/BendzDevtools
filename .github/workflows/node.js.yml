@@ -38,7 +38,7 @@ jobs:
       run: |
         mkdir -p ./temp/BendzDevtools
         cp ./fxmanifest.lua ./temp/BendzDevtools/
-        cp -r ./dist ./temp/BendzDevtools
+        cp -r ./{dist,html} ./temp/BendzDevtools
         cd ./temp && zip -r ../BendzDevtools.zip ./BendzDevtools
     - name: Create Release
       uses: "marvinpinto/action-automatic-releases@v1.2.1"
