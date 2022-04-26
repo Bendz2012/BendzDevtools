@@ -25,3 +25,9 @@ export async function getUserInput(windowTitle: string = "", defaultText: string
     }
     return inputText;
 }
+
+export function ShowAboveRadarMessage(message: string){
+    SetNotificationTextEntry("STRING")
+    AddTextComponentString(message)
+    DrawNotification(false, true)
+}
