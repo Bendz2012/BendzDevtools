@@ -12,8 +12,32 @@ export function initCreateVehicleSpawnPoint(menuItem: NativeUi.UIMenuItem, menu:
     vehicleSpawnPointMenu.GetTitle().Scale = 0.9;
     menu.AddSubMenu(vehicleSpawnPointMenu, menuItem);
 
-    let spawnVehicleItem = new NativeUi.UIMenuCheckboxItem("Spawn vehicle", false);
+    const getCurrentCoordsItem = new NativeUi.UIMenuItem("Get Current Coords", "Get Current Coords");
+    vehicleSpawnPointMenu.AddItem(getCurrentCoordsItem);
+
+    const spawnVehicleItem = new NativeUi.UIMenuCheckboxItem("Spawn vehicle", false);
     vehicleSpawnPointMenu.AddItem(spawnVehicleItem);
+
+    // menu funtions
+    vehicleSpawnPointMenu.MenuOpen.on(() => {
+        [x, y, z] = GetEntityCoords(playerPed, true);
+        heading = GetEntityHeading(playerPed);
+    });
+
+    vehicleSpawnPointMenu.MenuClose.on(() => {
+        if (vehicle !== null) {
+            DeleteVehicle(vehicle);
+            vehicle = null;
+            spawnVehicleItem.Checked = false;
+        }
+    });
+
+    vehicleSpawnPointMenu.ItemSelect.on((item: NativeUi.UIMenuItem, index: number) => {
+        if (item.Text == "Get Current Coords") {
+            [x, y, z] = GetEntityCoords(playerPed, true);
+            heading = GetEntityHeading(playerPed);
+        }
+    });
 
     vehicleSpawnPointMenu.CheckboxChange.on((_item: NativeUi.UIMenuCheckboxItem, _checked: boolean) => {
         switch (_item.Text) {
@@ -22,7 +46,8 @@ export function initCreateVehicleSpawnPoint(menuItem: NativeUi.UIMenuItem, menu:
                 if (_checked) {
                     vehicle = spawnVehicle("adder", x, y, z, heading);
                 } else {
-                    DeleteEntity(vehicle);
+                    DeleteVehicle(vehicle);
+                    vehicle = null;
                 }
             }
         }
