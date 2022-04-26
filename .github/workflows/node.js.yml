@@ -4,50 +4,47 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
 
 jobs:
- # Prettier-Check:
-  #  runs-on: ubuntu-latest
-   # steps:
-    #  - uses: actions/checkout@v2
-     # - uses: actions/setup-node@v1
-      #- run: npm install && npm run prettier-check
-  build:
+    Prettier-Check:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+            - run: npm install && npm run format
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [16.x]
+                # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - name: Bundle built files
-      run: |
-        mkdir -p ./temp/BendzDevtools
-        cp ./fxmanifest.lua ./temp/BendzDevtools/
-        cp -r ./dist ./temp/BendzDevtools
-        cd ./temp && zip -r ../BendzDevtools.zip ./BendzDevtools
-    - name: Create Release
-      uses: "marvinpinto/action-automatic-releases@v1.2.1"
-      id: auto_release
-      with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        title: BendzDevtools
-        automatic_release_tag: "latest"
-        prerelease: false
-        files: BendzDevtools.zip
-
-  
+        steps:
+            - uses: actions/checkout@v3
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: "npm"
+            - run: npm ci
+            - run: npm run build --if-present
+            - name: Bundle built files
+              run: |
+                  mkdir -p ./temp/BendzDevtools
+                  cp ./fxmanifest.lua ./temp/BendzDevtools/
+                  cp -r ./dist ./temp/BendzDevtools
+                  cd ./temp && zip -r ../BendzDevtools.zip ./BendzDevtools
+            - name: Create Release
+              uses: "marvinpinto/action-automatic-releases@v1.2.1"
+              id: auto_release
+              with:
+                  repo_token: "${{ secrets.GITHUB_TOKEN }}"
+                  title: BendzDevtools
+                  automatic_release_tag: "latest"
+                  prerelease: false
+                  files: BendzDevtools.zip

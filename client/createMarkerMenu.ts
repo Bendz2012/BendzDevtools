@@ -1,7 +1,7 @@
 import { copyToClipBoard, getUserInput, sleep } from "./utils";
 import * as NativeUi from "./nativeui/nativeui.js";
 
-export function inintCreateMarkerMenu(menuItem: NativeUi.UIMenuItem, menu: NativeUi.Menu) {
+export function initCreateMarkerMenu(menuItem: NativeUi.UIMenuItem, menu: NativeUi.Menu) {
     let markerType = 0;
     let [x, y, z] = GetEntityCoords(PlayerPedId(), true);
     let [dirX, dirY, dirZ] = [0.0, 0.0, 0.0];
