@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode development --color --progress",
-    "watch": "webpack --mode development --watch"
+    "watch": "webpack --mode development --watch",
+    "format": "prettier --write client/*.ts server/*.ts && prettier --check client/*.ts server/*.ts"
   },
   "dependencies": {
     "@citizenfx/client": "^2.0.4793-1",
@@ -14,6 +15,7 @@
     "@types/node": "^16.3.1"
   },
   "devDependencies": {
+    "prettier": "^2.6.2",
     "remove-files-webpack-plugin": "^1.4.4",
     "ts-loader": "^9.2.3",
     "typescript": "^4.3.5",

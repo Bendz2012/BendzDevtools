@@ -1,6 +1,6 @@
 import * as NativeUi from "./nativeui/nativeui.js";
 import { initCopyCoordsMenu } from "./copyCoordsMenu";
-import { inintCreateMarkerMenu } from "./createMarkerMenu";
+import { initCreateMarkerMenu } from "./createMarkerMenu";
 
 const menu = new NativeUi.Menu("Bendz Devtools", "", new NativeUi.Point(50, 50));
 
@@ -29,5 +29,5 @@ function menuInit() {
     let createMarkerItem = new NativeUi.UIMenuItem("Create Marker", "Create Marker easily");
     menu.AddItem(createMarkerItem);
 
-    inintCreateMarkerMenu(createMarkerItem, menu);
+    initCreateMarkerMenu(createMarkerItem, menu);
 }
