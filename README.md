@@ -62,7 +62,7 @@ Don't forget to give the project a star! Thanks again!
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-[LICENSE.txt](https://github.com/Bendz2012/BendzDevtools/blob/readMe/LICENSE.txt)
+[LICENSE.md](https://github.com/Bendz2012/BendzDevtools/blob/readMe/LICENSE.md)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
