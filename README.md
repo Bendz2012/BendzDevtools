@@ -35,7 +35,10 @@ _Below is an example of how you can instruct your audience on installing and set
 
 ## Usage
 
-_Comming soon_
+1. Type ```/devTools``` in the chat
+[![Screenshot-2022-04-27-183453.png](https://i.postimg.cc/8PmzbhtG/Screenshot-2022-04-27-183453.png)](https://postimg.cc/D8mhv49p)
+2. Now  a menu should have opened, by navigating this menu you can now use the provided tools.
+[![Screenshot-2022-04-27-183948.png](https://i.postimg.cc/nzTtDknS/Screenshot-2022-04-27-183948.png)](https://postimg.cc/ZB9gk6B6)
 <!-- I will add screenshots of the menu etc. here as an example of usage -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
