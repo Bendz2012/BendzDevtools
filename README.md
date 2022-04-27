@@ -59,7 +59,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the GNU General Public License v3.0. See [LICENSE](https://github.com/Bendz2012/BendzDevtools/blob/master/LICENSE) for more information.
+Distributed under the GNU Affero General Public License v3.0. See [LICENSE](https://github.com/Bendz2012/BendzDevtools/blob/master/LICENSE) for more information.
 
 
 
