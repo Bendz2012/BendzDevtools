@@ -26,7 +26,7 @@ jobs:
     - name: Bundle built files
       run: |
         mkdir -p ./temp/BendzDevtools
-        cp ./fxmanifest.lua ./temp/BendzDevtools/
+        cp ./{fxmanifest.lua,README.md,LICENSE} ./temp/BendzDevtools/
         cp -r ./{dist,html} ./temp/BendzDevtools
         cd ./temp && zip -r ../BendzDevtools.zip ./BendzDevtools
     - name: Create Release
