@@ -15,19 +15,19 @@ like cars or markers
 
 * [Node.js](https://nodejs.org/en/)
 * [Typescript](https://www.typescriptlang.org/)
+* [NativeUI.js](https://github.com/PichotM/FiveM-NativeUI)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Getting Started
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
 1. Download the .zip in the [Releases](https://github.com/Bendz2012/BendzDevtools/releases/tag/latest)
 2. Put it into your FiveM Ressources Folder
 3. Add to server-config
 	```sh
-	start BendzDevtools
+	ensure BendzDevtools
 	```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -39,12 +39,9 @@ _Below is an example of how you can instruct your audience on installing and set
 [![Screenshot-2022-04-27-183453.png](https://i.postimg.cc/8PmzbhtG/Screenshot-2022-04-27-183453.png)](https://postimg.cc/D8mhv49p)
 2. Now  a menu should have opened, by navigating this menu you can now use the provided tools.
 [![Screenshot-2022-04-27-183948.png](https://i.postimg.cc/nzTtDknS/Screenshot-2022-04-27-183948.png)](https://postimg.cc/ZB9gk6B6)
-<!-- I will add screenshots of the menu etc. here as an example of usage -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -60,23 +57,10 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.md` for more information.
-[LICENSE.md](https://github.com/Bendz2012/BendzDevtools/blob/readMe/LICENSE.md)
+Distributed under the MIT License. See `LICENSE` for more information.
+[LICENSE](https://github.com/Bendz2012/BendzDevtools/blob/master/LICENSE)
 
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-We would like to give some credits to
-
-* [Open Source Organisation](https://opensource.org/licenses/MIT)
-* [NativeUI.js](https://github.com/PichotM/FiveM-NativeUI)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
