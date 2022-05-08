@@ -1,12 +1,14 @@
-name: Node.js CI
+name: Create Release
 
 on:
   push:
-    branches: [ master ]
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
-  build:
-
+  create-tagged-release:
+    #if: github.ref == 'refs/heads/master'
+    name: Build and Create Tagged Release
     runs-on: ubuntu-latest
 
     strategy:
@@ -15,7 +17,15 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Get tag
+      run: echo ::set-output name=VERSION_TAG::${GITHUB_REF/refs\/tags\//}
+      id: get_tag
+    - run: echo ${{github.ref}}
+    - name: Checkout source code
+      uses: actions/checkout@v2
+      with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
@@ -28,13 +38,12 @@ jobs:
         mkdir -p ./temp/BendzDevtools
         cp ./{fxmanifest.lua,README.md,LICENSE} ./temp/BendzDevtools/
         cp -r ./{dist,html} ./temp/BendzDevtools
-        cd ./temp && zip -r ../BendzDevtools.zip ./BendzDevtools
+        cd ./temp && zip -r ../BendzDevtoolsV${{ steps.get_tag.outputs.VERSION_TAG }}.zip ./BendzDevtools
     - name: Create Release
       uses: "marvinpinto/action-automatic-releases@v1.2.1"
       id: auto_release
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        title: BendzDevtools
-        automatic_release_tag: "latest"
+        repo_token: "${{ secrets.GITHUB_TOKEN  }}"
+        title: BendzDevtools | ${{ steps.get_tag.outputs.VERSION_TAG }}
         prerelease: false
-        files: BendzDevtools.zip
+        files: BendzDevtoolsV${{ steps.get_tag.outputs.VERSION_TAG }}.zip
