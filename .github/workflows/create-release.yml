@@ -43,7 +43,7 @@ jobs:
       uses: "marvinpinto/action-automatic-releases@v1.2.1"
       id: auto_release
       with:
-        repo_token: "${{ secrets.PAT }}"
+        repo_token: "${{ secrets.GITHUB_TOKEN  }}"
         title: BendzDevtools | ${{ steps.get_tag.outputs.VERSION_TAG }}
         prerelease: false
         files: BendzDevtoolsV${{ steps.get_tag.outputs.VERSION_TAG }}.zip
