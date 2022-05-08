@@ -5,6 +5,8 @@ game 'gta5'
 name 'BendzDevtools'
 author 'Bendz2012'
 
+version '0.0.1'
+
 description  'dev tools for easy development'
 
 ui_page 'html/index.html'
